@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  web:
+    build: ./
+    container_name: "webapp-container"
+    environment:
+      PYTHONBUFFERED: 'true'
+    command: python /app/run.py
+    ports:
+      - 8080:8080
+    volumes:
+      - '.:/app'
